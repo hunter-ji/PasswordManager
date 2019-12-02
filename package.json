@@ -1,0 +1,27 @@
+{
+  "name": "passwordmanager",
+  "version": "1.0.0",
+  "description": "a command-line-based password manager.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kuari/PasswordManager.git"
+  },
+  "keywords": [
+    "password",
+    "manager"
+  ],
+  "author": "Kuari",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Kuari/PasswordManager/issues"
+  },
+  "homepage": "https://github.com/Kuari/PasswordManager#readme",
+  "dependencies": {
+    "clipboardy": "^2.1.0",
+    "inquirer": "^7.0.0"
+  }
+}
