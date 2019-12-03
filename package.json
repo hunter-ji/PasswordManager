@@ -22,6 +22,10 @@
   "homepage": "https://github.com/Kuari/PasswordManager#readme",
   "dependencies": {
     "clipboardy": "^2.1.0",
-    "inquirer": "^7.0.0"
+    "inquirer": "^7.0.0",
+    "js-sha512": "^0.8.0"
+  },
+  "bin": {
+    "passwordManager": "app.js"
   }
 }

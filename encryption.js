@@ -1,4 +1,8 @@
+#!/usr/bin/env node
+
+const sha512 = require('js-sha512');
 const crypto = require('crypto');
+
 const hash = crypto.createHash('md5');
 
 function createHashKey(password) {
@@ -54,16 +58,27 @@ function createSecret(domain, salt, length) {
         return ''
     }
     var userKey = createHashKey(salt);
+
     const ret = Array.apply(null, {
             length: 3
         })
-        .reduce(value => createHmacKey(value + userKey, domain), domain)
+        .reduce(value => sha512(value + userKey), domain)
         .substr(0, length)
         .split('')
     ret[0] = isNaN(ret[0]) ? ret[0].toUpperCase() : String.fromCharCode(65 + parseInt(ret[0], 10))
     ret[1] = isNaN(ret[1]) ? ret[1].toLowerCase() : String.fromCharCode(97 + parseInt(ret[1], 10))
     ret[2] = isNaN(ret[2]) ? ret[2].charCodeAt(0) % 10 : ret[2]
-    return ret.join('')
+
+    const hmacRet = Array.apply(null, {
+            length: 3
+        })
+        .reduce(value => createHmacKey(value + userKey, ret.join('')), domain)
+        .substr(0, length)
+        .split('')
+    hmacRet[0] = isNaN(hmacRet[0]) ? hmacRet[0].toUpperCase() : String.fromCharCode(65 + parseInt(hmacRet[0], 10))
+    hmacRet[1] = isNaN(hmacRet[1]) ? hmacRet[1].toLowerCase() : String.fromCharCode(97 + parseInt(hmacRet[1], 10))
+    hmacRet[2] = isNaN(hmacRet[2]) ? hmacRet[2].charCodeAt(0) % 10 : hmacRet[2]
+    return hmacRet.join('')
 }
 
 module.exports = createSecret;
