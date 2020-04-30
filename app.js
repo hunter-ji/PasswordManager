@@ -24,7 +24,7 @@ function main() {
         {
             type: 'input',
             message: 'Length of password :',
-            name: 'phone',
+            name: 'length',
             default: 20
         }
     ]
