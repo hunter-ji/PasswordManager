@@ -1,6 +1,6 @@
 {
-  "name": "passwordmanager",
-  "version": "1.0.0",
+  "name": "passwd-manager",
+  "version": "1.1.0",
   "description": "a command-line-based password manager.",
   "main": "main.js",
   "scripts": {
@@ -26,6 +26,6 @@
     "js-sha512": "^0.8.0"
   },
   "bin": {
-    "passwordManager": "app.js"
+    "password-manager": "app.js"
   }
 }

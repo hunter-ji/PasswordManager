@@ -1,4 +1,4 @@
-# PasswordManage
+# Password Manage
 
 ### a command-line-based password manager.
 
@@ -21,13 +21,7 @@ You only need to remember a master password. Generate encrypted passwords accord
 ## Installation
 
 ```bash
-git clone https://github.com/Kuari/PasswordManager.git
-
-cd PasswordManager
-
-npm i
-
-npm link
+npm install -g passwd-manager
 ```
 
 
@@ -35,6 +29,6 @@ npm link
 ## Usage
 
 ```bash
-passwordManager
+password-manager
 ```
 
